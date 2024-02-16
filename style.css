@@ -1,0 +1,359 @@
+@import url('https://fonts.cdnfonts.com/css/roboto');
+
+/* VARIABLES*/
+:root {
+    /*Primary */
+    --primary-color: hsl(4, 100%, 67%);
+
+    /*Secondary */
+    --DarkSlateGrey: hsl(234, 29%, 20%);
+    --CharcoalGrey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+
+
+
+    --font-family-default: 'Roboto', sans-serif;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+
+    --fs-300: 1rem;
+    --fs-400: 1.125rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.5rem;
+    --fs-700: 1.75rem;
+    --fs-800: 2rem;
+    --fs-900: 5rem;
+}
+
+/* Reset css */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    font-family: inherit;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    font-family: var(--font-family-default);
+    font-size: var(--fs-300);
+    color: black;
+}
+
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    
+    outline: none;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 375px;
+
+}
+
+.img-hide {
+    display: none;
+}
+
+
+
+.row {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Newsletter info*/
+.newsletter__info {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem 1rem;
+    gap: 20px;
+
+    .newsletter__info-h1 {
+        font-size: 2.5rem;
+    }
+
+    .newsletter__info-ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .newsletter__info-li {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        line-height: 1.5;
+
+    }
+
+    .newsletter__form {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .form {
+            .form__fieldset {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .form__fieldset label {
+                font-size: .8rem;
+                font-weight: var(--fw-bold);
+            }
+
+            .form__fieldset input {
+                padding: 1rem 2rem;
+                border: 1px solid var(--Grey);
+                border-radius: 10px;
+            }
+
+            .form_fieldset-warning{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        .newsletter__form-btn {
+            padding: 1rem 2rem;
+            background-color: var(--DarkSlateGrey);
+            color: var(--White);
+            font-weight: var(--fw-bold);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            /* Añadimos una transición para suavizar el efecto */
+        }
+
+        .newsletter__form-btn:active {
+            transform: scale(0.95);
+            /* Cambiamos la escala al 95% cuando se hace clic */
+            transition: transform 0.2s ease;
+            /* Añadimos una transición para suavizar el efecto */
+        }
+
+        .newsletter__form-btn:hover {
+            background: var(--primary-color);
+        }
+
+    }
+
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+    padding-block: 10rem;
+    padding-inline: 2rem;
+}
+
+.card p {
+    width: 100%;
+}
+
+.card button {
+    width: 100%;
+    padding: 1rem 2rem;
+    margin-top: 10rem;
+    background-color: var(--DarkSlateGrey);
+    color: var(--White);
+    font-weight: var(--fw-bold);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.card button:active {
+    transform: scale(0.95);
+    /* Cambiamos la escala al 95% cuando se hace clic */
+    transition: transform 0.2s ease;
+    /* Añadimos una transición para suavizar el efecto */
+}
+
+.card button:hover {
+    background: var(--primary-color);
+}
+.hide {
+    display: none;
+
+}
+
+
+
+@media(min-width: 376px) {
+    body {
+        display: grid;
+        place-content: center;
+        background-color: var(--CharcoalGrey);
+        min-height: 100vh;
+    }
+    
+
+    .img-hide-mobile {
+        display: none;
+    }
+
+    .img-hide {
+        display: block;
+
+    }
+
+    .newsletter__image {
+        width: 100%;
+    }
+
+    .container {
+        max-width: 925px;
+        max-width: 100%;
+        background-color: var(--White);
+        padding: 1rem;
+        border-radius: 30px;
+        box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.4);
+
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 0;
+
+    }
+
+
+    .newsletter__info {
+
+
+        padding-left: 2.5rem;
+        padding-block: 2rem;
+        justify-content: center;
+        flex: 1;
+        gap: 30px;
+
+        .newsletter__info-h1 {
+            font-size: 3.5rem;
+
+
+        }
+
+        .newsletter__info-p {
+            width: 90%;
+        }
+
+        .newsletter__form {
+
+            width: 85%;
+        }
+    }
+
+
+
+
+    .card {
+        width: 425px;
+        max-width: 100%;
+        background-color: var(--White);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-inline: 4rem;
+        padding-block: 2rem;
+        gap: 25px;
+        border-radius: 30px;
+
+
+
+    }
+
+    .card h1 {
+        font-size: 3rem;
+        line-height: 1.1;
+    }
+
+    .card img {
+        width: 45px;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    .card button {
+        width: 100%;
+        padding: 1rem 2rem;
+        background-color: var(--DarkSlateGrey);
+        color: var(--White);
+        font-weight: var(--fw-bold);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        margin-top: 0;
+    }
+
+    .card button:active {
+        transform: scale(0.95);
+        /* Cambiamos la escala al 95% cuando se hace clic */
+        transition: transform 0.2s ease;
+        /* Añadimos una transición para suavizar el efecto */
+    }
+
+    .card button:hover {
+        background: var(--primary-color);
+    }
+    .card span{
+        font-weight: var(--fw-bold);
+    }
+
+   
+    .hide {
+        display: none;
+
+    }
+
+}
+
+.active {
+    display: flex;
+}
+.error{
+    border: 1px solid red!important;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+.error-text{
+    color: red;
+
+}
